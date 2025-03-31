@@ -126,7 +126,8 @@ return (
         
       </View>
 
-      <Modal visible={modalVisible} animationType="slide">
+      <Modal  visible={modalVisible} animationType="fade" transparent={true}>
+      <View style={styles.overlay}>
         <View style={styles.modalContainer}>
           <Text style={styles.modalTitle}>Configurações</Text>
 
@@ -165,7 +166,8 @@ return (
 
           <Button title="Fechar" onPress={() => setModalVisible(false)} />
         </View>
-      </Modal >
+        </View>
+      </Modal  >
 
       <FlatList
         data={products.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))}
@@ -360,6 +362,9 @@ modalContainer: {
   flex: 1,
   padding: 20,
   justifyContent: "center",
+  
+  height:30
+  
 },
 modalTitle: {
   fontSize: 24,
@@ -372,5 +377,31 @@ settingItem: {
   justifyContent: "space-between",
   alignItems: "center",
   marginVertical: 10,
+},
+
+
+overlay: {
+  flex: 1,
+  backgroundColor: "rgba(0, 0, 0, 0.5)", // Fundo escuro semi-transparente
+  justifyContent: "center",
+  alignItems: "center",
+},
+modalContainer: {
+  width: "80%",
+  backgroundColor: "white",
+  padding: 20,
+  borderRadius: 10,
+  alignItems: "center",
+},
+modalTitle: {
+  fontSize: 18,
+  fontWeight: "bold",
+  marginBottom: 10,
+},
+settingItem: {
+  flexDirection: "row",
+  justifyContent: "space-between",
+  width: "100%",
+  marginVertical: 5,
 },
 });
