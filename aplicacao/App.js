@@ -45,6 +45,13 @@ const membrosTimes = [
     role: "Desenvolvedor Back-end",
     image: require("./assets/pessoa5.png"),
  
+  },
+  {
+    id: "5",
+    name: "Luciana Souza",
+    role: "Desenvolvedora Back-end",
+    image: require("./assets/pessoa6.png"),
+ 
   }
 ];
 
